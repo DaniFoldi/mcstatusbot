@@ -19,5 +19,13 @@ const DISCORD_TOKEN = process.env.DISCORD_TOKEN
   // TODO partials
   const client = new discord.Client({partials: []})
   
-  client.login(DISCORD_TOKEN)
+  //client.login(DISCORD_TOKEN)
+
+  status = {
+    online: true,
+    image: 'blabla.png',
+    'playerCount': 42,
+    'maxPlayerCount': 69,
+    'version': '1.69.420'
+  }
 })()
