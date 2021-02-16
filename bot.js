@@ -5,12 +5,13 @@ const discord = require('discord.js')
 const fse = require('fs-extra')
 const json5 = require('json5')
 const minecraftUtil = require('minecraft-server-util')
+const path = require('path')
 
 const embed = require('./embed')
 
-const CONFIG_FILE = process.env.CONFIG_FILE || 'config/config.json5'
+const CONFIG_FILE = process.env.CONFIG_FILE || path.join('config', 'config.json5')
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN
-const LAST_STATUS_FILE = process.env.CONFIG_FILE || 'config/laststatus.json5'
+const LAST_STATUS_FILE = process.env.CONFIG_FILE || path.join('config', 'laststatus.json5')
 
 const query = async function(config) {
   try {
