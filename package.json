@@ -72,5 +72,8 @@
     "extends": [
       "eslint:recommended"
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.28"
   }
 }
