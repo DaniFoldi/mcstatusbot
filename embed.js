@@ -6,7 +6,6 @@ module.exports = async (client, config, status) => {
   if (!client.readyTimestamp)
     return
     
-    
     const color = status.online ? '#1b913c' : '#d60018'
     const embed = new MessageEmbed().setColor(color)
         .setThumbnail(status.image)
