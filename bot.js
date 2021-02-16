@@ -8,9 +8,9 @@ const minecraftUtil = require('minecraft-server-util')
 
 const embed = require('./embed')
 
-const CONFIG_FILE = process.env.CONFIG_FILE || 'config.json5'
+const CONFIG_FILE = process.env.CONFIG_FILE || 'config/config.json5'
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN
-const LAST_STATUS_FILE = process.env.CONFIG_FILE || 'laststatus.json5'
+const LAST_STATUS_FILE = process.env.CONFIG_FILE || 'config/laststatus.json5'
 
 const query = async function(config) {
   try {
@@ -36,6 +36,13 @@ const query = async function(config) {
   }
 }
 
+const updateActivity = async function(client) {
+  await client.user.setActivity('play.nugget.hu', {
+        type: 'PLAYING'
+      })
+  debug('Activity update')
+}
+
 const updateEmbed = async function(client, config) {
   const status = await query(config)
   const messageId = await embed(client, config, status)
@@ -53,14 +60,10 @@ const updateEmbed = async function(client, config) {
 
     const client = new discord.Client({partials: ['USER', 'CHANNEL', 'GUILD_MEMBER', 'MESSAGE', 'REACTION']})
 
-    client.on('ready', async () => {updateEmbed(client, config)})
+    client.on('ready', async () => {updateEmbed(client, config);
+                                   updateActivity(client)})
     setInterval(async () => {updateEmbed(client, config)}, config.updateInterval)
-    setInterval(async () => {
-      await client.user.setActivity('play.nugget.hu', {
-        type: 'PLAYING'
-      })
-      debug('Activity update')
-    }, 30 * 60 * 1000)
+    setInterval(async () => {updateActivity()}, 30 * 60 * 1000)
     
     await client.login(DISCORD_TOKEN)
   } catch (e) {
