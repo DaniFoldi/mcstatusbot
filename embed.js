@@ -24,8 +24,18 @@ module.exports = async (client, config, status) => {
       await guild.channels.fetch()
   
     const channel = await guild.channels.cache.get(config.channelID)
-
-    const message = await channel.send(embed)
     
-    return message.id
+    try {
+      const message = await channel.messages.fetch(config.messageID, true, true)
+      if (message === undefined) {
+        const message = await channel.send(embed)
+        return message.id
+      } else {
+        await message.edit(embed)
+        return message.id
+      }
+    } catch (e) {
+      const message = await channel.send(embed)
+        return message.id
+    }
 }

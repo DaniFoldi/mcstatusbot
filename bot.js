@@ -39,7 +39,11 @@ const query = async function(config) {
 const updateEmbed = async function(client, config) {
   const status = await query(config)
   const messageId = await embed(client, config, status)
-  // TODO debug update
+  debug('Status update')
+  
+  config.messageID = messageId
+  
+  const configRaw = await fse.writeFile(CONFIG_FILE, json5.stringify(config))
 }
 
 ;(async () => {
@@ -51,6 +55,12 @@ const updateEmbed = async function(client, config) {
 
     client.on('ready', async () => {updateEmbed(client, config)})
     setInterval(async () => {updateEmbed(client, config)}, config.updateInterval)
+    setInterval(async () => {
+      await client.user.setActivity('play.nugget.hu', {
+        type: 'PLAYING'
+      })
+      debug('Activity update')
+    }, 30 * 60 * 1000)
     
     await client.login(DISCORD_TOKEN)
   } catch (e) {
