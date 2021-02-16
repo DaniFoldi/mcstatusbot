@@ -10,6 +10,7 @@ const path = require('path')
 const embed = require('./embed')
 
 const CONFIG_FILE = process.env.CONFIG_FILE || path.join('config', 'config.json5')
+const IMAGE_FILE = process.env.IMAGE_FILE || path.join('config', 'image.png')
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN
 const LAST_STATUS_FILE = process.env.CONFIG_FILE || path.join('config', 'laststatus.json5')
 
@@ -20,16 +21,19 @@ const query = async function(config) {
     
     const status = {
       online: true,
-      image: 'https://nuggetcraft.net/images/icons/server-icon.png',
+      image: IMAGE_FILE,
+      //image: 'https://nuggetcraft.net/images/icons/server-icon.png',
       playerCount: newStatus.onlinePlayers,
       maxPlayerCount: newStatus.maxPlayers,
       version: newStatus.version
     }
     
     await fse.writeFile(LAST_STATUS_FILE, json5.stringify(status))
+    await fse.writeFile(IMAGE_FILE, newStatus.favicon.replace(/^data:image\/png;base64,/, ''), 'base64')
     
     return status
   } catch (e) {
+    console.error(e)
     const statusRaw = await fse.readFile(LAST_STATUS_FILE)
     const status = json5.parse(statusRaw.toString())
     
