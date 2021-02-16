@@ -1,0 +1,13 @@
+{
+  "node": true,
+  "undef": true,
+  "unused": true,
+  "eqeqeq": true,
+  "strict": "global",
+  "nonbsp": true,
+  "quotmark": "single",
+  "varstmt": true,
+  "asi": true,
+  "esversion" : 6,
+  "maxerr": 30
+}

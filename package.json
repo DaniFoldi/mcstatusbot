@@ -1,0 +1,76 @@
+{
+  "name": "mcstatusbot",
+  "version": "1.0.0",
+  "description": "A Discord bot that can display the status of multiple game servers.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaniFoldi/mcstatusbot.git"
+  },
+  "keywords": [
+    "discord",
+    "minecraft",
+    "bot",
+    "status",
+    "discord",
+    "bot",
+    "game",
+    "server",
+    "minecraft",
+    "server",
+    "server",
+    "status",
+    "minecraft",
+    "info"
+  ],
+  "author": "DaniFoldi",
+  "contributors": [
+    "HgeX"
+  ],
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/DaniFoldi/mcstatusbot/issues"
+  },
+  "homepage": "https://github.com/DaniFoldi/mcstatusbot#readme",
+  "dependencies": {
+    "debug": "^4.3.1",
+    "discord.js": "^12.5.1",
+    "fs-extra": "^9.1.0",
+    "json5": "^2.2.0",
+    "minecraft-server-util": "^3.4.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "rules": {
+      "quotes": [
+        "warn",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "no-console": [
+        0
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ]
+    },
+    "extends": [
+      "eslint:recommended"
+    ]
+  }
+}
