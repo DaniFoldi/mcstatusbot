@@ -2,7 +2,7 @@
 
 const {MessageEmbed} = require('discord.js')
 
-const listItem = require('./listItem')
+const listItem = require('./listitem')
 
 module.exports = async (client, config, status) => {
   if (!client.readyTimestamp)
