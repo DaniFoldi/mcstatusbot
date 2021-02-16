@@ -9,6 +9,7 @@ module.exports = async (client, config, status) => {
         .setTitle(config.name)
         .setDescription(config.description)
         .addField('Játékosok száma', `${status.playerCount} / ${status.maxPlayerCount}`)
+        .setFooter(`${config.ip}${config.port === 25565 ? '' : (':' + config.port)}`)
 
     const guild = await client.guilds.cache.fetch(config.guildID)
     const channel = await guild.channels.cache.get(config.channelID)
