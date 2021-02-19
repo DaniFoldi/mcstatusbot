@@ -1,1 +1,26 @@
-{ip:'play.nugget.hu',updateInterval:20000,port:25565,name:'Nugget.hu Minecraft szerver',description:['Egysenki egyedül érzi magát, csatlakozz hozzá Te is!','A peted már vár!','Harcolj a többiek ellen - `/warp sziget`!','Kifogyott a boltodból a készlet, gyere és töltsd újra!','Az aukciósházban sok egyedi ajánlat vár!','A blokkok nem fogják magukat kiütni!','Jobb ma egy Nugget mint holnap egy túzok.'],guildID:'703965181876764694',channelID:'811297878164504626',messageID:'811499741019242516'}
+{ip:'play.nugget.hu',updateInterval:20000,port:25565,name:'Nugget.hu Minecraft szerver',description:
+[
+    'Egysenki egyedül érzi magát, csatlakozz hozzá Te is!',
+    'A peted már vár!',
+    'Harcolj a többiek ellen - `/warp sziget`!',
+    'Kifogyott a boltodból a készlet, gyere és töltsd újra!',
+    'Az aukciósházban sok egyedi ajánlat vár!',
+    'A blokkok nem fogják magukat kiütni!',
+    'Jobb ma egy Nugget mint holnap egy túzok.'
+    'Tízből kilenc fogorvos ezt ajánlja!',
+    'Te jó ég, aki most nem online, annak a telkét kitöröljük! ... Csak vicceltem.',
+    'Forró lávatavak 5 km-es körzetedben ismerkedni szeretnének.',
+    'A NuggetCraft soha nem fog csalódást okozni.',
+    'Miért beszélnél élőben emberekkel, amikor feljöhetsz a NuggetCraftra is?',
+    'A NuggetCraft jobban teljesít!',
+    'Soros György eltörölné az endfarm levédését. **A Nugget elutasítja ezt**!',
+    'Horváth István kedvenc Minecraft szervere.',
+    'A kedvenc falusidat épp most fogja megcsócsálni egy zombi. Csak mondom.',
+    '*Tudtad?* A Nugget játékosainak 100%-a játszik a NuggetCraft szerverein!',
+    'Gyere fel a szerverre, vagy ne gyere fel a szerverre. De soha ne próbáld.',
+    'Most plusz 20% meglepetéssel!',
+    'Sétálgatunk, ségálgatunk, a NuggetCraft meg üres?!',
+    'Nugget. Just do it.',
+    'A parancs, amivel ingyen pénzt lehet szerezni pedig: '
+]
+,guildID:'703965181876764694',channelID:'811297878164504626',messageID:'811499741019242516'}
